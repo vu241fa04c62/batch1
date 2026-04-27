@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-['Plus_Jakarta_Sans'] antialiased bg-[#020617] text-slate-200;
+  }
+}
+
+/* --- Crazy Mesh Gradient Background --- */
+.mesh-container {
+  @apply fixed inset-0 -z-10 overflow-hidden bg-[#020617];
+}
+
+.mesh-circle {
+  @apply absolute rounded-full blur-[100px] opacity-40 animate-pulse-slow;
+}
+
+.c1 { @apply w-[600px] h-[600px] bg-indigo-600 -top-[10%] -left-[10%]; }
+.c2 { @apply w-[500px] h-[500px] bg-purple-600 -bottom-[10%] -right-[10%] delay-700; }
+.c3 { @apply w-[400px] h-[400px] bg-pink-600 top-[40%] left-[30%] delay-1000; }
+
+@keyframes pulse-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, 50px) scale(1.1); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 15s ease-in-out infinite alternate;
+}
+
+/* --- Refined Glassmorphism --- */
+.glass-card {
+  @apply bg-white/[0.03] backdrop-blur-2xl border border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)];
+}
+
+.glass-input {
+  @apply bg-white/[0.05] border border-white/10 rounded-2xl px-5 py-4 outline-none 
+         focus:border-primary/50 focus:bg-white/[0.08] focus:ring-4 focus:ring-primary/10
+         transition-all duration-500 placeholder:text-slate-600;
+}
+
+.btn-primary {
+  @apply relative overflow-hidden bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-2xl font-bold 
+         transition-all duration-300 active:scale-95 flex items-center justify-center gap-3
+         hover:shadow-[0_10px_30px_-10px_rgba(99,102,241,0.6)] hover:-translate-y-1;
+}
+
+.btn-primary::after {
+  content: '';
+  @apply absolute -top-[50%] -left-[50%] w-[200%] h-[200%] rotate-[45deg] transition-all duration-700;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+.btn-primary:hover::after {
+  @apply left-full;
+}
+
+.btn-secondary {
+  @apply bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl font-bold 
+         transition-all duration-300 active:scale-95 flex items-center justify-center gap-3
+         hover:shadow-[0_10px_30px_-10px_rgba(16,185,129,0.6)] hover:-translate-y-1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
+
