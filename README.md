@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SwiftCheck | Aesthetic Attendance System
 
 A modern, AI-ready attendance system built with the MERN stack (MongoDB, Express, React, Node.js).
@@ -51,3 +52,6 @@ A modern, AI-ready attendance system built with the MERN stack (MongoDB, Express
 ## 🧪 Technologies Used
 - **Frontend**: React, Vite, Tailwind CSS, Framer Motion, Lucide React, Axios.
 - **Backend**: Node.js, Express, MongoDB, Mongoose.
+=======
+# batch1
+>>>>>>> c8e86542bb5b3778835626b7d93a8f011cd56574
